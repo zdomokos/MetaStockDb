@@ -99,5 +99,11 @@
       <Version>3.12.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MetaStockDb\MetaStockDb.csproj">
+      <Project>{f91dd4fb-a0be-4ffa-8842-af8c410094db}</Project>
+      <Name>MetaStockDb</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
