@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
-    <ProjectGuid>{2F32E6E6-7987-4471-BCF2-D83C67A69A40}</ProjectGuid>
+    <ProjectGuid>{8897D9EB-13B6-4A48-A9A5-8293C4F9AE72}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>WinExe</OutputType>
@@ -85,12 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MetaStockDb\MetaStockDb.csproj">
-      <Project>{c35d8f8b-89ea-46b5-82e2-56d9ccd99e2f}</Project>
-      <Name>MetaStockDb</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MSDataForm.resx">

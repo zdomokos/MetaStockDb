@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C35D8F8B-89EA-46B5-82E2-56D9CCD99E2F}</ProjectGuid>
+    <ProjectGuid>{F91DD4FB-A0BE-4FFA-8842-AF8C410094DB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MetaStockDb</RootNamespace>
