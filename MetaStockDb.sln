@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaStockDb", "MetaStockDb\MetaStockDb.csproj", "{C35D8F8B-89EA-46B5-82E2-56D9CCD99E2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSFileFormat", "MSFileFormat\MSFileFormat.csproj", "{2F32E6E6-7987-4471-BCF2-D83C67A69A40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C35D8F8B-89EA-46B5-82E2-56D9CCD99E2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35D8F8B-89EA-46B5-82E2-56D9CCD99E2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35D8F8B-89EA-46B5-82E2-56D9CCD99E2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35D8F8B-89EA-46B5-82E2-56D9CCD99E2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F32E6E6-7987-4471-BCF2-D83C67A69A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F32E6E6-7987-4471-BCF2-D83C67A69A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F32E6E6-7987-4471-BCF2-D83C67A69A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F32E6E6-7987-4471-BCF2-D83C67A69A40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD5D0ACB-2685-4A36-821B-981BA54F0DE9}
+	EndGlobalSection
+EndGlobal
