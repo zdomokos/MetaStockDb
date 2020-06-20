@@ -27,8 +27,8 @@ namespace MetaStockDb.Test
             Console.WriteLine(db.Count);
             Assert.IsTrue(db.Count > 0);
 
-            var bars = db.LoadBars("STX");
-            Assert.IsTrue(bars.Count > 0);
+            var dataFile = db.LoadBars("STX");
+            Assert.IsTrue(dataFile.Records.Count > 0);
         }
 
 

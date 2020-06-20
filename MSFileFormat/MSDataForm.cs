@@ -23,10 +23,11 @@ namespace MSFileFormat
 
 		private void btnRead_Click(object sender, EventArgs e)
 		{
-			var stock = new PriceDateFile();
 			int fileNum = Convert.ToInt32(txtFileName.Text);
 			string extension = fileNum > 255 ? "mwd" : "dat";
 			string fileName = Path.Combine(DbPath, $"F{txtFileName.Text}.{extension}");
+
+			var stock = new PriceDateFile(DbPath, new StockDataHeader(){FileNumber = fileNum});
 			stock.Load(fileName);
 
 			var sb = new StringBuilder();

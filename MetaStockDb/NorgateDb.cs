@@ -99,15 +99,13 @@ namespace MetaStockDb
             }
         }
         
-        public List<PriceRec> LoadBars(string symbol)
+        public PriceDateFile LoadBars(string symbol)
         {
             if (!_symbolTable.TryGetValue(symbol, out var hdr)) return null;
             
-            var stock = new PriceDateFile();
-            string extension = hdr.FileNumber > 255 ? "mwd" : "dat";
-            string fileName = @$"{_dbRootPath}\{hdr.Classifier}\F{hdr.FileNumber}.{extension}";
-            stock.Load(fileName);
-            return stock.Records;
+            var stock = new PriceDateFile(_dbRootPath, hdr);
+            stock.Load();
+            return stock;
         }
 
         private bool IsMsFolder(string dir)

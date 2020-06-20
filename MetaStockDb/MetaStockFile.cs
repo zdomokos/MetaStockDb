@@ -232,6 +232,23 @@ namespace MetaStockDb
 
 	public class PriceDateFile : MetaStockFile<PriceRec>
 	{
+		public PriceDateFile()
+		{}
+		
+		public PriceDateFile(string dbRoot, StockDataHeader hdr)
+		{
+			string extension = hdr.FileNumber > 255 ? "mwd" : "dat";
+			FileName  = @$"{dbRoot}\{hdr.Classifier}\F{hdr.FileNumber}.{extension}";
+			StockDataHeader = hdr;
+		}
+		
+		public StockDataHeader StockDataHeader { get; }
+
+		public void Load()
+		{
+			Load(FileName);
+		}
+		
 		public override void Load(string fileName)
 		{
 			FileName = fileName;
