@@ -98,6 +98,11 @@ namespace MetaStockDb
                 }
             }
         }
+
+        public StockDataHeader GetHeader(string symbol)
+        {
+            return _symbolTable.TryGetValue(symbol, out var hdr) ? hdr : null;
+        }
         
         public PriceDateFile LoadBars(string symbol)
         {
