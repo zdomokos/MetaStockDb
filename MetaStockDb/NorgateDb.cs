@@ -24,6 +24,7 @@ namespace MetaStockDb
         }
 
         public int Count => _symbolTable.Count;
+        public Dictionary<string, StockDataHeader> SymbolTable => _symbolTable;
         
         
         public void LoadSymbolTable()
