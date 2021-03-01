@@ -14,19 +14,16 @@ namespace MetaStockDb
 {
     public class NorgateDb
     {
-        private readonly Dictionary<string, StockDataHeader> _symbolTable;
-        private readonly string _dbRootPath;
-
         public NorgateDb(string dbRootPath)
         {
-            _dbRootPath = dbRootPath;
+            _dbRootPath  = dbRootPath;
             _symbolTable = new Dictionary<string, StockDataHeader>();
         }
 
-        public int Count => _symbolTable.Count;
+        public int                                 Count       => _symbolTable.Count;
         public Dictionary<string, StockDataHeader> SymbolTable => _symbolTable;
-        
-        
+
+
         public void LoadSymbolTable()
         {
             // walk through all directories and store content of master files in memory
@@ -39,7 +36,7 @@ namespace MetaStockDb
 
                 // read master files
                 string emaster = Path.Combine(dir, "emaster");
-                string master = Path.Combine(dir, "master");
+                string master  = Path.Combine(dir, "master");
                 string xmaster = Path.Combine(dir, "xmaster");
                 if (File.Exists(emaster))
                 {
@@ -49,7 +46,6 @@ namespace MetaStockDb
                         masterFile.Load(emaster);
                         foreach (var hdr in masterFile.Records.Select(StockDataHeader.FromEMaster))
                             LoadToDb(hdr, path);
-    
                     }
                     catch (IOException e)
                     {
@@ -100,25 +96,19 @@ namespace MetaStockDb
             }
         }
 
-        public StockDataHeader GetHeader(string symbol)
-        {
-            return _symbolTable.TryGetValue(symbol, out var hdr) ? hdr : null;
-        }
-        
+        public StockDataHeader GetHeader(string symbol) { return _symbolTable.TryGetValue(symbol, out var hdr) ? hdr : null; }
+
         public PriceDateFile LoadBars(string symbol)
         {
             if (!_symbolTable.TryGetValue(symbol, out var hdr)) return null;
-            
+
             var stock = new PriceDateFile(_dbRootPath, hdr);
             stock.Load();
             return stock;
         }
 
-        private bool IsMsFolder(string dir)
-        {
-            return File.Exists($@"{dir}\master");
-        }
-        
+        private bool IsMsFolder(string dir) { return File.Exists($@"{dir}\master"); }
+
         private void LoadToDb(StockDataHeader hdr, string path)
         {
             hdr.Classifier = path;
@@ -127,6 +117,9 @@ namespace MetaStockDb
             else
                 _symbolTable.Add($"{hdr.Symbol}-{path}", hdr);
         }
+        
+        private readonly Dictionary<string, StockDataHeader> _symbolTable;
+        private readonly string                              _dbRootPath;
     }
 
     public enum TimeFrame
@@ -171,8 +164,8 @@ namespace MetaStockDb
             r.Symbol     = rec.Symbol;
             r.Name       = string.IsNullOrEmpty(rec.ExtName) ? rec.Name : rec.ExtName;
             r.FileNumber = rec.FileNumber;
-            r.FirstDate = MsFileIO.ConvertDateTime(rec.FirstDate);
-            r.LastDate = MsFileIO.ConvertDateTime(rec.LastDate);
+            r.FirstDate  = MsFileIO.ConvertDateTime(rec.FirstDate);
+            r.LastDate   = MsFileIO.ConvertDateTime(rec.LastDate);
             return r;
         }
 
@@ -198,8 +191,8 @@ namespace MetaStockDb
             r.Symbol     = rec.Symbol;
             r.Name       = rec.Name;
             r.FileNumber = rec.FileNumber;
-            r.FirstDate = MsFileIO.ConvertDateTime(rec.FirstDate);
-            r.LastDate = MsFileIO.ConvertDateTime(rec.LastDate);
+            r.FirstDate  = MsFileIO.ConvertDateTime(rec.FirstDate);
+            r.LastDate   = MsFileIO.ConvertDateTime(rec.LastDate);
             return r;
         }
 
@@ -225,8 +218,8 @@ namespace MetaStockDb
             r.Symbol     = rec.Symbol;
             r.Name       = rec.Name;
             r.FileNumber = rec.FileNumber;
-            r.FirstDate = MsFileIO.ConvertDateTime(rec.FirstDate1);
-            r.LastDate = MsFileIO.ConvertDateTime(rec.LastDate);
+            r.FirstDate  = MsFileIO.ConvertDateTime(rec.FirstDate1);
+            r.LastDate   = MsFileIO.ConvertDateTime(rec.LastDate);
             return r;
         }
     }
