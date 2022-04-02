@@ -49,10 +49,12 @@ namespace MetaStockDb
                     }
                     catch (IOException e)
                     {
+                        Console.WriteLine(e);
                         //MessageBox.Show(e.Message, "Error reading EMASTER file", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     catch (UnauthorizedAccessException e)
                     {
+                        Console.WriteLine(e);
                         //MessageBox.Show(e.Message, "Error reading EMASTER file", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -67,10 +69,12 @@ namespace MetaStockDb
                     }
                     catch (IOException e)
                     {
+                        Console.WriteLine(e.ToString());
                         //MessageBox.Show(e.Message, "Error reading EMASTER file", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     catch (UnauthorizedAccessException e)
                     {
+                        Console.WriteLine(e.ToString());
                         //MessageBox.Show(e.Message, "Error reading EMASTER file", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -86,10 +90,12 @@ namespace MetaStockDb
                     }
                     catch (IOException e)
                     {
+                        Console.WriteLine(e.ToString());
                         //MessageBox.Show(e.Message, "Error reading EMASTER file", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     catch (UnauthorizedAccessException e)
                     {
+                        Console.WriteLine(e.ToString());
                         //MessageBox.Show(e.Message, "Error reading EMASTER file", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }

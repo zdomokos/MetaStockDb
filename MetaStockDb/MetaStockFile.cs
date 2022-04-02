@@ -69,7 +69,7 @@ namespace MetaStockDb
 					Records.Add(rec);
 				}
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 				// log
 				throw;
@@ -147,7 +147,7 @@ namespace MetaStockDb
                 }
 
             }
-            catch (Exception e) 
+            catch (Exception) 
             {
 				// log
 	            throw;
@@ -217,7 +217,7 @@ namespace MetaStockDb
 					Records.Add(rec);
 				}
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 				// log
 				throw;
@@ -287,7 +287,7 @@ namespace MetaStockDb
 					Records.Add(rec);
 				}
 			}
-			catch (Exception e)
+			catch (Exception)
 			{
 				// log
 				throw;
