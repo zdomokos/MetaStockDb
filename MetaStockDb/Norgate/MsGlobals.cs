@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+// Decompiled with JetBrains decompiler
 // Type: Nis.Utils.MsGlobals
 // Assembly: Premium Data Converter, Version=1.0.5.0, Culture=neutral, PublicKeyToken=null
 // MVID: 363859BC-FAE9-47BF-B5F0-C936F45E98DD

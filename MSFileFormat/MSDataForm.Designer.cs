@@ -1,4 +1,4 @@
-﻿namespace MSFileFormat
+namespace MSFileFormat
 {
 	partial class MSDataForm
 	{

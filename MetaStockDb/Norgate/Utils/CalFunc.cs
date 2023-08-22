@@ -1,4 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
+// Decompiled with JetBrains decompiler
 // Type: Norgate.Utils.CalFunc
 // Assembly: norgate.general.4, Version=4.0.2.1, Culture=neutral, PublicKeyToken=d5eccc6216068f48
 // MVID: A122D709-041A-426F-9B6C-C1457ADC069B
