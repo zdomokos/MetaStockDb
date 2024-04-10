@@ -77,11 +77,11 @@ namespace MSFileFormat
 		private System.Windows.Forms.Panel BottomPanel;
 		private System.Windows.Forms.Panel Toppanel;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
-		private System.Windows.Forms.ContextMenu menuContext;
-		private System.Windows.Forms.MenuItem miContextExport;
-		private System.Windows.Forms.MenuItem miExportExportAll;
-		private System.Windows.Forms.MenuItem miExportExport3Sym;
-		private System.Windows.Forms.MenuItem miExportExportCustom;
+		//private System.Windows.Forms.ContextMenu menuContext;
+		//private System.Windows.Forms.MenuItem miContextExport;
+		//private System.Windows.Forms.MenuItem miExportExportAll;
+		//private System.Windows.Forms.MenuItem miExportExport3Sym;
+		//private System.Windows.Forms.MenuItem miExportExportCustom;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -131,11 +131,11 @@ namespace MSFileFormat
 			this.BottomPanel = new System.Windows.Forms.Panel();
 			this.Toppanel = new System.Windows.Forms.Panel();
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-			this.menuContext = new System.Windows.Forms.ContextMenu();
-			this.miContextExport = new System.Windows.Forms.MenuItem();
-			this.miExportExportAll = new System.Windows.Forms.MenuItem();
-			this.miExportExport3Sym = new System.Windows.Forms.MenuItem();
-			this.miExportExportCustom = new System.Windows.Forms.MenuItem();
+			//this.menuContext = new System.Windows.Forms.ContextMenu();
+			//this.miContextExport = new System.Windows.Forms.MenuItem();
+			//this.miExportExportAll = new System.Windows.Forms.MenuItem();
+			//this.miExportExport3Sym = new System.Windows.Forms.MenuItem();
+			//this.miExportExportCustom = new System.Windows.Forms.MenuItem();
 			this.HeaderGroupBox.SuspendLayout();
 			this.BottomPanel.SuspendLayout();
 			this.Toppanel.SuspendLayout();
@@ -210,7 +210,7 @@ namespace MSFileFormat
 																						this.RecNumHeader,
 																						this.SymbolHeader,
 																						this.NameHeader});
-			this.StockView.ContextMenu = this.menuContext;
+			//this.StockView.ContextMenu = this.menuContext;
 			this.StockView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.StockView.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.StockView.Location = new System.Drawing.Point(0, 0);
@@ -250,38 +250,38 @@ namespace MSFileFormat
 			this.Toppanel.Name = "Toppanel";
 			this.Toppanel.Size = new System.Drawing.Size(840, 168);
 			this.Toppanel.TabIndex = 3;
-			// 
-			// menuContext
-			// 
-			this.menuContext.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																						this.miContextExport});
-			// 
-			// miContextExport
-			// 
-			this.miContextExport.Index = 0;
-			this.miContextExport.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																							this.miExportExportAll,
-																							this.miExportExport3Sym,
-																							this.miExportExportCustom});
-			this.miContextExport.Text = "Export";
-			// 
-			// miExportExportAll
-			// 
-			this.miExportExportAll.Index = 0;
-			this.miExportExportAll.Text = "Export All";
-			this.miExportExportAll.Click += new System.EventHandler(this.miExportExportAll_Click);
-			// 
-			// miExportExport3Sym
-			// 
-			this.miExportExport3Sym.Index = 1;
-			this.miExportExport3Sym.Text = "Export 3 char symbols";
-			this.miExportExport3Sym.Click += new System.EventHandler(this.miExportExport3Sym_Click);
-			// 
-			// miExportExportCustom
-			// 
-			this.miExportExportCustom.Index = 2;
-			this.miExportExportCustom.Text = "Custom...";
-			this.miExportExportCustom.Click += new System.EventHandler(this.miExportExportCustom_Click);
+			//// 
+			//// menuContext
+			//// 
+			//this.menuContext.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			//																			this.miContextExport});
+			//// 
+			//// miContextExport
+			//// 
+			//this.miContextExport.Index = 0;
+			//this.miContextExport.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			//																				this.miExportExportAll,
+			//																				this.miExportExport3Sym,
+			//																				this.miExportExportCustom});
+			//this.miContextExport.Text = "Export";
+			//// 
+			//// miExportExportAll
+			//// 
+			//this.miExportExportAll.Index = 0;
+			//this.miExportExportAll.Text = "Export All";
+			//this.miExportExportAll.Click += new System.EventHandler(this.miExportExportAll_Click);
+			//// 
+			//// miExportExport3Sym
+			//// 
+			//this.miExportExport3Sym.Index = 1;
+			//this.miExportExport3Sym.Text = "Export 3 char symbols";
+			//this.miExportExport3Sym.Click += new System.EventHandler(this.miExportExport3Sym_Click);
+			//// 
+			//// miExportExportCustom
+			//// 
+			//this.miExportExportCustom.Index = 2;
+			//this.miExportExportCustom.Text = "Custom...";
+			//this.miExportExportCustom.Click += new System.EventHandler(this.miExportExportCustom_Click);
 			// 
 			// BaseMaster
 			// 

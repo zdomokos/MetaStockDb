@@ -1,53 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net48</TargetFramework>
-    <LangVersion>8</LangVersion>
-    <Configurations>Debug;Release</Configurations>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Windows.Forms" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="AllMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="BaseMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="EMasterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="MasterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="MSDataForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="MSDataForm.Designer.cs">
-      <DependentUpon>MSDataForm.cs</DependentUpon>
-    </Compile>
-    <Compile Update="StartForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="XMasterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="MSDataForm.resx">
-      <DependentUpon>MSDataForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="StartForm.resx">
-      <DependentUpon>StartForm.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="NUnit" Version="3.13.3" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MetaStockDb\MetaStockDb.csproj" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<OutputType>WinExe</OutputType>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<UseWindowsForms>True</UseWindowsForms>
+		<Configurations>Debug;Release</Configurations>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<UseWPF>False</UseWPF>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<WarningLevel>4</WarningLevel>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<ErrorReport>prompt</ErrorReport>
+		<DefineConstants>DEBUG;TRACE;</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<WarningLevel>4</WarningLevel>
+		<DebugSymbols>false</DebugSymbols>
+		<DebugType>none</DebugType>
+		<Optimize>true</Optimize>
+		<ErrorReport>prompt</ErrorReport>
+		<DefineConstants>TRACE;</DefineConstants>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="NUnit" Version="4.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\MetaStockDb\MetaStockDb.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
 </Project>
