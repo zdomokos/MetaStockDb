@@ -1,5 +1,3 @@
-using System;
-
 namespace MetaStockDb
 {
     public interface IBar

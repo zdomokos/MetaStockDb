@@ -1,5 +1,3 @@
-using System;
-using System.Reflection;
 using System.Runtime.InteropServices;
 
 // This sets the default COM visibility of types in the assembly to invisible.

@@ -5,11 +5,6 @@
 // third party except under written license, and shall be subject to the limitations prescribed under license.
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
 namespace MetaStockDb
 {
     public class NorgateDb

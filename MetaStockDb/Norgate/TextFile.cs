@@ -5,9 +5,6 @@
 // Assembly location: C:\Program Files (x86)\Premium Data Converter\Premium Data Converter.exe
 
 using Norgate.Utils;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text;
 
 namespace Nis.Utils

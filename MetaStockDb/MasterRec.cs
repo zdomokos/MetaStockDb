@@ -1,5 +1,3 @@
-using System;
-
 namespace MetaStockDb
 {
 	public struct MSHeader

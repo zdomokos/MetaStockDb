@@ -4,9 +4,7 @@
 // MVID: A122D709-041A-426F-9B6C-C1457ADC069B
 // Assembly location: C:\Program Files (x86)\Premium Data Converter\norgate.general.4.dll
 
-using System;
 using System.Diagnostics;
-using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;

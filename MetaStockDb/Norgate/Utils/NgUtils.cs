@@ -9,10 +9,8 @@
 
 //using SevenZip;
 
-using System;
 using System.Collections;
 using System.ComponentModel;
-using System.IO;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
