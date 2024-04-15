@@ -77,11 +77,11 @@ namespace MSFileFormat
 		private System.Windows.Forms.Panel BottomPanel;
 		private System.Windows.Forms.Panel Toppanel;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
-		//private System.Windows.Forms.ContextMenu menuContext;
-		//private System.Windows.Forms.MenuItem miContextExport;
-		//private System.Windows.Forms.MenuItem miExportExportAll;
-		//private System.Windows.Forms.MenuItem miExportExport3Sym;
-		//private System.Windows.Forms.MenuItem miExportExportCustom;
+		//private System.Windows.Forms.ContextMenuStrip menuContext;
+		//private System.Windows.Forms.ToolStripMenuItem miContextExport;
+		//private System.Windows.Forms.ToolStripMenuItem miExportExportAll;
+		//private System.Windows.Forms.ToolStripMenuItem miExportExport3Sym;
+		//private System.Windows.Forms.ToolStripMenuItem miExportExportCustom;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -131,11 +131,11 @@ namespace MSFileFormat
 			this.BottomPanel = new System.Windows.Forms.Panel();
 			this.Toppanel = new System.Windows.Forms.Panel();
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-			//this.menuContext = new System.Windows.Forms.ContextMenu();
-			//this.miContextExport = new System.Windows.Forms.MenuItem();
-			//this.miExportExportAll = new System.Windows.Forms.MenuItem();
-			//this.miExportExport3Sym = new System.Windows.Forms.MenuItem();
-			//this.miExportExportCustom = new System.Windows.Forms.MenuItem();
+			//this.menuContext = new System.Windows.Forms.ContextMenuStrip();
+			//this.miContextExport = new System.Windows.Forms.ToolStripMenuItem();
+			//this.miExportExportAll = new System.Windows.Forms.ToolStripMenuItem();
+			//this.miExportExport3Sym = new System.Windows.Forms.ToolStripMenuItem();
+			//this.miExportExportCustom = new System.Windows.Forms.ToolStripMenuItem();
 			this.HeaderGroupBox.SuspendLayout();
 			this.BottomPanel.SuspendLayout();
 			this.Toppanel.SuspendLayout();
@@ -210,7 +210,7 @@ namespace MSFileFormat
 																						this.RecNumHeader,
 																						this.SymbolHeader,
 																						this.NameHeader});
-			//this.StockView.ContextMenu = this.menuContext;
+			//this.StockView.ContextMenuStrip = this.menuContext;
 			this.StockView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.StockView.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.StockView.Location = new System.Drawing.Point(0, 0);
@@ -253,13 +253,13 @@ namespace MSFileFormat
 			//// 
 			//// menuContext
 			//// 
-			//this.menuContext.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			//this.menuContext.MenuItems.AddRange(new System.Windows.Forms.ToolStripMenuItem[] {
 			//																			this.miContextExport});
 			//// 
 			//// miContextExport
 			//// 
 			//this.miContextExport.Index = 0;
-			//this.miContextExport.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			//this.miContextExport.MenuItems.AddRange(new System.Windows.Forms.ToolStripMenuItem[] {
 			//																				this.miExportExportAll,
 			//																				this.miExportExport3Sym,
 			//																				this.miExportExportCustom});
