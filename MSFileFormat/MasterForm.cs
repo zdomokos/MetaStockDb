@@ -34,14 +34,14 @@ namespace MSFileFormat
 			string DataFileName = Path.Combine(dir, "MASTER");
 			if (File.Exists(DataFileName))
 			{
-				this.Text = "MASTER (" + DataFileName + ")";
+				this.Text = $"MASTER ({DataFileName})";
 				LoadMasterFile(DataFileName);
 			}
 			else
 			{
-				MessageBox.Show("Unable to find a MASTER file in directory " + dir,
-								"File Does Not Exist",
-								MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show($"Unable to find a MASTER file in directory {dir}",
+				                "File Does Not Exist",
+				                MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 
 		}

@@ -37,16 +37,16 @@ namespace MSFileFormat
 			string DataFileName = Path.Combine(dir, "XMASTER");
 			if (File.Exists(DataFileName))
 			{
-				this.Text = "XMASTER (" + DataFileName + ")";
+				this.Text      = $"XMASTER ({DataFileName})";
 				Cursor.Current = Cursors.WaitCursor;
 				LoadXMasterFile(DataFileName);
 				Cursor.Current = Cursors.Default;
 			}
 			else
 			{
-				MessageBox.Show("Unable to find an XMASTER file in directory " + dir,
-								"File Does Not Exist",
-								MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show($"Unable to find an XMASTER file in directory {dir}",
+				                "File Does Not Exist",
+				                MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 

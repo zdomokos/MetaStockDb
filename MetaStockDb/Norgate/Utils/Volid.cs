@@ -161,10 +161,10 @@ namespace Norgate.Utils
 		{
 			get
 			{
-				string hostName = Dns.GetHostName();
+				string      hostName  = Dns.GetHostName();
 				IPHostEntry hostEntry = Dns.GetHostEntry(hostName);
-				string str = hostName + "   ";
-				int num = 0;
+				string      str       = $"{hostName}   ";
+				int         num       = 0;
 				foreach (IPAddress address in hostEntry.AddressList)
 					str += $"IP#{(object) ++num}:{(object) address.ToString()} ";
 				return str;
@@ -177,7 +177,7 @@ namespace Norgate.Utils
 			{
 				string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 				if (folderPath != null && folderPath != "")
-					return folderPath + "\\Microsoft\\Internet Explorer\\Quick Launch\\";
+					return $"{folderPath}\\Microsoft\\Internet Explorer\\Quick Launch\\";
 				return (string) null;
 			}
 		}

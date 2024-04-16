@@ -20,9 +20,9 @@ namespace Nis.Utils
 		public MsGlobals(string folder)
 		{
 			FolderPath = folder;
-			Fs1Pth = folder + "master";
-			Fs2Pth = folder + "emaster";
-			Fs3Pth = folder + "xmaster";
+			Fs1Pth     = $"{folder}master";
+			Fs2Pth     = $"{folder}emaster";
+			Fs3Pth     = $"{folder}xmaster";
 		}
 	}
 }

@@ -34,11 +34,11 @@ namespace MSFileFormat
 
             string DataFileName = Path.Combine(dir, "EMASTER");
             if (File.Exists(DataFileName)) {
-                this.Text = "EMASTER (" + DataFileName + ")";
+                this.Text = $"EMASTER ({DataFileName})";
                 LoadEMasterFile(DataFileName);
             }
             else {
-                MessageBox.Show("Unable to find an EMASTER file in directory " + dir, 
+                MessageBox.Show($"Unable to find an EMASTER file in directory {dir}", 
                                 "File Does Not Exist",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

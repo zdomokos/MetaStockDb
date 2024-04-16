@@ -56,11 +56,11 @@ namespace Nis.Utils
 			}
 			catch (IOException ex)
 			{
-				str = "Exception: File " + path + " could not be accessed as it was open in another process";
+				str = $"Exception: File {path} could not be accessed as it was open in another process";
 			}
 			catch (Exception ex)
 			{
-				str = "Exception: File " + path + " experienced an unknown exception: " + ex.Message;
+				str = $"Exception: File {path} experienced an unknown exception: {ex.Message}";
 			}
 
 			return str;
@@ -89,7 +89,7 @@ namespace Nis.Utils
 					totalWidth = 0;
 				string str3 = str2.PadRight(totalWidth);
 				if (useQuotes)
-					str3 = "\"" + str3 + "\"";
+					str3 = $"\"{str3}\"";
 				str1 = str1 + str3 + mp.FieldDelim;
 			}
 
@@ -179,7 +179,7 @@ namespace Nis.Utils
 				totalWidth = 0;
 			string str2 = str1.PadLeft(totalWidth);
 			if (mp.UseQuotes)
-				str2 = "\"" + str2 + "\"";
+				str2 = $"\"{str2}\"";
 			line = line + str2 + mp.FieldDelim;
 		}
 

@@ -27,7 +27,7 @@ namespace Nis.Utils
 			{
 				int fileNo = (int) sex.Get.FileNo;
 				string str = $"F{(object) fileNo}.";
-				return fileNo <= (int) byte.MaxValue ? str + "dat" : str + "mwd";
+				return fileNo <= (int) byte.MaxValue ? $"{str}dat" : $"{str}mwd";
 			}
 		}
 		internal string datFilePath => DirPath + datFileName;
@@ -73,7 +73,7 @@ namespace Nis.Utils
 						{
 							if (num1 < num2)
 							{
-								string path = DirPath + "master.bak";
+								string path = $"{DirPath}master.bak";
 								if (File.Exists(path))
 								{
 									msg.Fs1.Close();
@@ -82,7 +82,7 @@ namespace Nis.Utils
 							}
 							else if (num2 < num1)
 							{
-								string path = DirPath + "emaster.bak";
+								string path = $"{DirPath}emaster.bak";
 								if (File.Exists(path))
 								{
 									msg.Fs1.Close();
@@ -235,11 +235,11 @@ namespace Nis.Utils
 			else
 			{
 				if (File.Exists(msg.Fs1Pth))
-					File.Copy(msg.Fs1Pth, msg.Fs1Pth + ".bak", true);
+					File.Copy(msg.Fs1Pth, $"{msg.Fs1Pth}.bak", true);
 				if (File.Exists(msg.Fs2Pth))
-					File.Copy(msg.Fs2Pth, msg.Fs2Pth + ".bak", true);
+					File.Copy(msg.Fs2Pth, $"{msg.Fs2Pth}.bak", true);
 				if (File.Exists(msg.Fs3Pth))
-					File.Copy(msg.Fs3Pth, msg.Fs3Pth + ".bak", true);
+					File.Copy(msg.Fs3Pth, $"{msg.Fs3Pth}.bak", true);
 				if (!Amended)
 					return;
 				bool flag = sex.Count > (int) byte.MaxValue;

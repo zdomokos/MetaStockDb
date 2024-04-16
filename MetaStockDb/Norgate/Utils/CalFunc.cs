@@ -79,9 +79,9 @@ namespace Norgate.Utils
 			'Z'
 		};
 
-		private static int day = 0;
-		private static int month = 0;
-		private static int year = 0;
+		private static int day;
+		private static int month;
+		private static int year;
 
 		private static void setYMD(int ymd)
 		{

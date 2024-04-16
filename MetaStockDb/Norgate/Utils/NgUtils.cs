@@ -200,7 +200,7 @@ namespace Norgate.Utils
 				return "";
 			string str = s;
 			if (!s.EndsWith("\\"))
-				str = s + "\\";
+				str = $"{s}\\";
 			return str;
 		}
 
@@ -243,7 +243,7 @@ namespace Norgate.Utils
 
 		public static SortedList ReadIniSection(string filePath, string section)
 		{
-			section = "[" + section + "]";
+			section = $"[{section}]";
 			SortedList sortedList = new SortedList();
 			StreamReader streamReader = new StreamReader(filePath);
 			bool flag1 = streamReader.EndOfStream;
@@ -420,7 +420,7 @@ namespace Norgate.Utils
 
 		public static bool IsValidFilename(string testName)
 		{
-			return !new Regex("[" + Regex.Escape(Path.InvalidPathChars.ToString()) + "]").IsMatch(testName);
+			return !new Regex($"[{Regex.Escape(Path.InvalidPathChars.ToString())}]").IsMatch(testName);
 		}
 
 		public static bool IsValidPath(string path)
@@ -459,7 +459,7 @@ namespace Norgate.Utils
 						str2 = "00";
 						break;
 					case 1:
-						str2 = "0" + str2;
+						str2 = $"0{str2}";
 						break;
 				}
 
