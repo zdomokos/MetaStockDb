@@ -38,7 +38,7 @@ namespace Norgate.Utils
 			while (true)
 			{
 				StringBuilder stringBuilder2 = stringBuilder1;
-				if ((int) stringBuilder2[stringBuilder2.Length - 1] == (int) c)
+				if ((int) stringBuilder2[^1] == (int) c)
 					--stringBuilder1.Length;
 				else
 					break;

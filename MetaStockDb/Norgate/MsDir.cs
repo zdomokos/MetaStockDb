@@ -40,7 +40,7 @@ namespace Nis.Utils
 			if (isMono)
 				ch = '/';
 			DirPath = folder;
-			if ((int) DirPath[DirPath.Length - 1] != (int) ch)
+			if ((int) DirPath[^1] != (int) ch)
 				DirPath += ch.ToString();
 			bool flag = false;
 			msg = new MsGlobals(DirPath);
