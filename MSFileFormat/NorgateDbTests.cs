@@ -15,7 +15,7 @@ namespace MetaStockDb.Test
             //{
             //}
         }
-        
+
         [Test]
         public void ReadData()
         {
@@ -27,10 +27,5 @@ namespace MetaStockDb.Test
             var dataFile = db.LoadBars("STX");
             //Assert.IsTrue(dataFile.Records.Count > 0);
         }
-
-
     }
-
-
-
 }

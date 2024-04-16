@@ -6,9 +6,9 @@
 
 namespace Nis.Utils
 {
-	public enum CallbackType
-	{
-		AddTbLine,
-		PbProg,
-	}
+    public enum CallbackType
+    {
+        AddTbLine,
+        PbProg,
+    }
 }

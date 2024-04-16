@@ -4,10 +4,10 @@ namespace MetaStockDb
     {
         DateTime OpenTime { get; }
 
-        double Open { get;  }
-        double High { get; }
-        double Low { get;  }
-        double Close { get;  }
+        double Open  { get; }
+        double High  { get; }
+        double Low   { get; }
+        double Close { get; }
 
         long Volume { get; }
     }
@@ -15,26 +15,26 @@ namespace MetaStockDb
     public class PriceRec
     {
         public DateTime Date;
-        public float Datef;
-        public float Open;
-        public float High;
-        public float Low;
-        public float Close;
-        public float Volume;
-        public float Unadj;
+        public float    Datef;
+        public float    Open;
+        public float    High;
+        public float    Low;
+        public float    Close;
+        public float    Volume;
+        public float    Unadj;
 
         public string[] ToStringArray()
         {
             return new string[]
-            {
-                MsFileIO.ConvertDateToString(Datef),
-                Open.ToString(),
-                High.ToString(),
-                Low.ToString(),
-                Close.ToString(),
-                Volume.ToString(),
-                Unadj.ToString(),
-            };
+                   {
+                       MsFileIO.ConvertDateToString(Datef),
+                       Open.ToString(),
+                       High.ToString(),
+                       Low.ToString(),
+                       Close.ToString(),
+                       Volume.ToString(),
+                       Unadj.ToString(),
+                   };
         }
 
         public override string ToString()

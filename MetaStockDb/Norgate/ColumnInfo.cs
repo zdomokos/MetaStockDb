@@ -6,17 +6,17 @@
 
 namespace Nis.Utils
 {
-	public class ColumnInfo
-	{
-		public string Name;
-		public int DP;
-		public string outputName;
+    public class ColumnInfo
+    {
+        public string Name;
+        public int    DP;
+        public string outputName;
 
-		public ColumnInfo(string name, int decPlaces, string outputName)
-		{
-			Name = name;
-			DP = decPlaces;
-			this.outputName = outputName;
-		}
-	}
+        public ColumnInfo(string name, int decPlaces, string outputName)
+        {
+            Name            = name;
+            DP              = decPlaces;
+            this.outputName = outputName;
+        }
+    }
 }

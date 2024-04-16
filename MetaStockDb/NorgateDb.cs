@@ -1,8 +1,10 @@
 #region ZGT
+
 // (c) Copyright 2020 ZTG LLC. All Rights Reserved.
 // NOTICE: This file contains source code, ideas, techniques, and information (the Information) which are
 // Proprietary and Confidential Information of ZTG LLC. This Information may not be used by or disclosed to any
 // third party except under written license, and shall be subject to the limitations prescribed under license.
+
 #endregion
 
 namespace MetaStockDb
@@ -97,7 +99,10 @@ namespace MetaStockDb
             }
         }
 
-        public StockDataHeader GetHeader(string symbol) { return _symbolTable.TryGetValue(symbol, out var hdr) ? hdr : null; }
+        public StockDataHeader GetHeader(string symbol)
+        {
+            return _symbolTable.TryGetValue(symbol, out var hdr) ? hdr : null;
+        }
 
         public PriceDateFile LoadBars(string symbol)
         {
@@ -108,7 +113,10 @@ namespace MetaStockDb
             return stock;
         }
 
-        private bool IsMsFolder(string dir) { return File.Exists($@"{dir}\master"); }
+        private bool IsMsFolder(string dir)
+        {
+            return File.Exists($@"{dir}\master");
+        }
 
         private void LoadToDb(StockDataHeader hdr, string path)
         {
@@ -118,7 +126,7 @@ namespace MetaStockDb
             else
                 _symbolTable.Add($"{hdr.Symbol}-{path}", hdr);
         }
-        
+
         private readonly Dictionary<string, StockDataHeader> _symbolTable;
         private readonly string                              _dbRootPath;
     }
@@ -148,16 +156,16 @@ namespace MetaStockDb
             var r = new StockDataHeader();
             switch (rec.TimeFrame)
             {
-                case (byte) 'I':
+                case (byte)'I':
                     r.TF = TimeFrame.Intraday;
                     break;
-                case (byte) 'D':
+                case (byte)'D':
                     r.TF = TimeFrame.Daily;
                     break;
-                case (byte) 'W':
+                case (byte)'W':
                     r.TF = TimeFrame.Weekly;
                     break;
-                case (byte) 'M':
+                case (byte)'M':
                     r.TF = TimeFrame.Monthly;
                     break;
             }
@@ -175,16 +183,16 @@ namespace MetaStockDb
             var r = new StockDataHeader();
             switch (rec.TimeInterval)
             {
-                case (byte) 'I':
+                case (byte)'I':
                     r.TF = TimeFrame.Intraday;
                     break;
-                case (byte) 'D':
+                case (byte)'D':
                     r.TF = TimeFrame.Daily;
                     break;
-                case (byte) 'W':
+                case (byte)'W':
                     r.TF = TimeFrame.Weekly;
                     break;
-                case (byte) 'M':
+                case (byte)'M':
                     r.TF = TimeFrame.Monthly;
                     break;
             }
@@ -202,16 +210,16 @@ namespace MetaStockDb
             var r = new StockDataHeader();
             switch (rec.TimeFrame)
             {
-                case (byte) 'I':
+                case (byte)'I':
                     r.TF = TimeFrame.Intraday;
                     break;
-                case (byte) 'D':
+                case (byte)'D':
                     r.TF = TimeFrame.Daily;
                     break;
-                case (byte) 'W':
+                case (byte)'W':
                     r.TF = TimeFrame.Weekly;
                     break;
-                case (byte) 'M':
+                case (byte)'M':
                     r.TF = TimeFrame.Monthly;
                     break;
             }

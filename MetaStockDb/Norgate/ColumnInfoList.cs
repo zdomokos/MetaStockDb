@@ -6,7 +6,7 @@
 
 namespace Nis.Utils
 {
-	public class ColumnInfoList : List<ColumnInfo>
-	{
-	}
+    public class ColumnInfoList : List<ColumnInfo>
+    {
+    }
 }

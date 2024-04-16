@@ -1,6 +1,6 @@
 /*
  *  Copyright (C) 2006-2014 Robert Iwancz
- * 
+ *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -13,7 +13,7 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  */
 
 using System;
@@ -24,52 +24,57 @@ using MetaStockDb;
 
 namespace MSFileFormat
 {
-	public class EMasterForm : MSFileFormat.BaseMaster
-	{
-		private System.ComponentModel.IContainer components = null;
+    public class EMasterForm : MSFileFormat.BaseMaster
+    {
+        private System.ComponentModel.IContainer components = null;
 
-        public EMasterForm(string dir) {  
+        public EMasterForm(string dir)
+        {
             // This call is required by the Windows Form Designer.
             InitializeComponent();
 
             string DataFileName = Path.Combine(dir, "EMASTER");
-            if (File.Exists(DataFileName)) {
+            if (File.Exists(DataFileName))
+            {
                 this.Text = $"EMASTER ({DataFileName})";
                 LoadEMasterFile(DataFileName);
             }
-            else {
-                MessageBox.Show($"Unable to find an EMASTER file in directory {dir}", 
+            else
+            {
+                MessageBox.Show($"Unable to find an EMASTER file in directory {dir}",
                                 "File Does Not Exist",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-		private EMasterForm()
-		{
-		}
+        private EMasterForm()
+        {
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if (components != null) 
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
 
-		#region Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+            base.Dispose(disposing);
+        }
+
+        #region Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             // 
             // RecordsText
             // 
@@ -90,15 +95,16 @@ namespace MSFileFormat
             // EMasterForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(784, 701);
-            this.Name = "EMasterForm";
-            this.Text = "EMASTER";
-
+            this.ClientSize        = new System.Drawing.Size(784, 701);
+            this.Name              = "EMasterForm";
+            this.Text              = "EMASTER";
         }
-		#endregion
+
+        #endregion
 
 
-		public void LoadEMasterFile(string filename) {
+        public void LoadEMasterFile(string filename)
+        {
             this.SuspendLayout();
             StockView.Columns.Clear();
             StockView.Columns.Add("ASC", -2, HorizontalAlignment.Left);
@@ -127,41 +133,44 @@ namespace MSFileFormat
             StockView.Columns.Add("ExtName", -2, HorizontalAlignment.Left);
             StockView.Columns.Add("Remainder", -2, HorizontalAlignment.Left);
 
-            try 
+            try
             {
-	            var masterFile = new EMasterFile();
-	            masterFile.Load(filename);
+                var masterFile = new EMasterFile();
+                masterFile.Load(filename);
 
-	            for (int i = 0; i < masterFile.Records.Count; i++)
-	            {
-		            var lvi = new ListViewItem(masterFile.Records[i].ToStringArray());
-		            StockView.Items.Add(lvi);
-	            }
+                for (int i = 0; i < masterFile.Records.Count; i++)
+                {
+                    var lvi = new ListViewItem(masterFile.Records[i].ToStringArray());
+                    StockView.Items.Add(lvi);
+                }
             }
-            catch (IOException e) 
+            catch (IOException e)
             {
                 MessageBox.Show(e.Message, "Error reading EMASTER file", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (UnauthorizedAccessException e) 
+            catch (UnauthorizedAccessException e)
             {
                 MessageBox.Show(e.Message, "Error reading EMASTER file", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-			this.ResumeLayout();
+            this.ResumeLayout();
         }
 
-        protected override void ExportData(string filename, bool filter) {
-            using (StreamWriter sw = new StreamWriter(filename)) {
+        protected override void ExportData(string filename, bool filter)
+        {
+            using (StreamWriter sw = new StreamWriter(filename))
+            {
                 const int iFileNumber = 1;
-                const int iSymbol = 8;
-                const int iName = 10;
-                const int iFirstDate = 14;
-                const int iLastDate = 16;
-                const int iExtName = 23;
+                const int iSymbol     = 8;
+                const int iName       = 10;
+                const int iFirstDate  = 14;
+                const int iLastDate   = 16;
+                const int iExtName    = 23;
 
                 string name;
-                
-                foreach (ListViewItem lvi in StockView.Items){
+
+                foreach (ListViewItem lvi in StockView.Items)
+                {
                     if (filter && lvi.SubItems[iSymbol].Text.Length > 3)
                         continue;
                     sw.Write(lvi.SubItems[iFileNumber].Text);
@@ -174,14 +183,17 @@ namespace MSFileFormat
                     else
                         name = lvi.SubItems[iName].Text;
 
-                    if (name.IndexOf(',') >= 0) {
+                    if (name.IndexOf(',') >= 0)
+                    {
                         sw.Write("\"");
                         sw.Write(name);
                         sw.Write("\"");
                     }
-                    else {
+                    else
+                    {
                         sw.Write(name);
                     }
+
                     sw.Write(',');
 
                     sw.Write(lvi.SubItems[iFirstDate].Text);
@@ -189,9 +201,8 @@ namespace MSFileFormat
                     sw.Write(lvi.SubItems[iLastDate].Text);
 
                     sw.WriteLine();
-                }                
+                }
             }
         }
-
     }
 }

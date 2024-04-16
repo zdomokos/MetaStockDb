@@ -1,6 +1,6 @@
 /*
  *  Copyright (C) 2006-2014 Robert Iwancz
- * 
+ *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -13,7 +13,7 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  */
 
 using System;
@@ -21,21 +21,20 @@ using System.Windows.Forms;
 
 namespace MSFileFormat
 {
-	/// <summary>
-	/// Class with program entry point.
-	/// </summary>
-	internal sealed class Program
-	{
-		/// <summary>
-		/// Program entry point.
-		/// </summary>
-		[STAThread]
-		private static void Main(string[] args)
-		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new StartForm());
-		}
-		
-	}
+    /// <summary>
+    /// Class with program entry point.
+    /// </summary>
+    internal sealed class Program
+    {
+        /// <summary>
+        /// Program entry point.
+        /// </summary>
+        [STAThread]
+        private static void Main(string[] args)
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new StartForm());
+        }
+    }
 }

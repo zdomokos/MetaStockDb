@@ -8,35 +8,36 @@ using System.Globalization;
 
 namespace Nis.Utils
 {
-	public class TextFileTranslateParams
-	{
-		public bool UseHeaders = true;
-		public bool UseQuotes = true;
-		public string Extension = "txt";
-		public string DateFormat = "yyyyMMdd";
-		public string DummyTime = "16:00:00";
-		public string FieldDelim = "";
-		public string TxtPath = "";
-		public int FieldWidth;
-		public ColumnInfoList ColInfoList;
-		public CallbackHandler cbh;
-		public NumberFormatInfo NFI;
+    public class TextFileTranslateParams
+    {
+        public bool             UseHeaders = true;
+        public bool             UseQuotes  = true;
+        public string           Extension  = "txt";
+        public string           DateFormat = "yyyyMMdd";
+        public string           DummyTime  = "16:00:00";
+        public string           FieldDelim = "";
+        public string           TxtPath    = "";
+        public int              FieldWidth;
+        public ColumnInfoList   ColInfoList;
+        public CallbackHandler  cbh;
+        public NumberFormatInfo NFI;
 
-		public TextFileTranslateParams(string txtPath, bool useHeaders, bool useQuotes, string extension,
-			string dateFormat, string fieldDelim, int fieldWidth, NumberFormatInfo nfi, ColumnInfoList ciList,
-			string culture, CallbackHandler cbh, string dummyTime)
-		{
-			TxtPath = txtPath;
-			UseHeaders = useHeaders;
-			UseQuotes = useQuotes;
-			Extension = extension;
-			DateFormat = dateFormat;
-			FieldDelim = fieldDelim;
-			FieldWidth = fieldWidth;
-			DummyTime = dummyTime;
-			NFI = nfi;
-			ColInfoList = ciList;
-			this.cbh = cbh;
-		}
-	}
+        public TextFileTranslateParams(string txtPath, bool useHeaders, bool useQuotes, string extension,
+                                       string dateFormat, string fieldDelim, int fieldWidth, NumberFormatInfo nfi,
+                                       ColumnInfoList ciList,
+                                       string culture, CallbackHandler cbh, string dummyTime)
+        {
+            TxtPath     = txtPath;
+            UseHeaders  = useHeaders;
+            UseQuotes   = useQuotes;
+            Extension   = extension;
+            DateFormat  = dateFormat;
+            FieldDelim  = fieldDelim;
+            FieldWidth  = fieldWidth;
+            DummyTime   = dummyTime;
+            NFI         = nfi;
+            ColInfoList = ciList;
+            this.cbh    = cbh;
+        }
+    }
 }

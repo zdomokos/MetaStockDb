@@ -6,10 +6,10 @@
 
 namespace Nis.Utils
 {
-	public enum EnumPeriodicity
-	{
-		daily,
-		weekly,
-		monthly,
-	}
+    public enum EnumPeriodicity
+    {
+        daily,
+        weekly,
+        monthly,
+    }
 }

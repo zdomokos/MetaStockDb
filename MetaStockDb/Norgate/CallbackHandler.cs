@@ -6,5 +6,5 @@
 
 namespace Nis.Utils
 {
-	public delegate void CallbackHandler(CallbackType cbt, object o1, object o2, string msg, bool log);
+    public delegate void CallbackHandler(CallbackType cbt, object o1, object o2, string msg, bool log);
 }

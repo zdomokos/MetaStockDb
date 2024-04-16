@@ -5,16 +5,16 @@ namespace Nis.Utils
 {
     public class MsMkt : MsBaseProcs
     {
-        private string _datFilePath = "";
-        private byte[] _msDayBuff = new byte[28];
+        private string          _datFilePath = "";
+        private byte[]          _msDayBuff   = new byte[28];
         private EnumPeriodicity _periodicity;
-        private FileStream _fs;
-        private MsMktList _dlyList;
-        private MsMktList _result;
-        private DirEntry _entry;
-        private MsDir _msd;
-        private RecMsDay _baseRec;
-        private bool _loaded;
+        private FileStream      _fs;
+        private MsMktList       _dlyList;
+        private MsMktList       _result;
+        private DirEntry        _entry;
+        private MsDir           _msd;
+        private RecMsDay        _baseRec;
+        private bool            _loaded;
 
         public MsMkt(int periodicityIndex, string dataFilePath, string ticker)
         {
@@ -22,11 +22,11 @@ namespace Nis.Utils
             _datFilePath = dataFilePath;
             clearROAttribute(_datFilePath);
             _baseRec = new RecMsDay();
-            Ticker = ticker;
+            Ticker   = ticker;
         }
 
-        public int Count => _result.Count;
-        public string Ticker { get; }
+        public int       Count      => _result.Count;
+        public string    Ticker     { get; }
         public RecMktDay CurrentDay => _result.Get;
 
         public List<RecDay> PriceList
@@ -133,9 +133,9 @@ namespace Nis.Utils
                         day.MakeDtd();
                         if (!flag)
                         {
-                            int d1 = day.dtd.d;
-                            int? nullable = fjd;
-                            int valueOrDefault1 = nullable.GetValueOrDefault();
+                            int  d1              = day.dtd.d;
+                            int? nullable        = fjd;
+                            int  valueOrDefault1 = nullable.GetValueOrDefault();
                             if ((d1 >= valueOrDefault1 ? (nullable.HasValue ? 1 : 0) : 0) != 0)
                             {
                                 int d2 = day.dtd.d;
@@ -163,28 +163,28 @@ namespace Nis.Utils
         {
             RecMktDay day = (RecMktDay)null;
             _result = new MsMktList();
-            int num1 = -1;
+            int    num1 = -1;
             double num2 = 0.0;
             if (_dlyList.Reset())
             {
                 do
                 {
-                    RecMktDay get = _dlyList.Get;
-                    RecDay dtd = get.dtd;
-                    DateTime dateTime = DateTime.FromOADate((double)get.dtd.d);
+                    RecMktDay get      = _dlyList.Get;
+                    RecDay    dtd      = get.dtd;
+                    DateTime  dateTime = DateTime.FromOADate((double)get.dtd.d);
                     if (day == null)
                     {
-                        day = new RecMktDay(dtd);
+                        day       = new RecMktDay(dtd);
                         day.dtd.v = 0.0f;
                         day.dtd.i = 0.0f;
-                        num1 = -1;
-                        num2 = (double)get.dtd.d;
+                        num1      = -1;
+                        num2      = (double)get.dtd.d;
                     }
 
                     if (dateTime.DayOfWeek <= (DayOfWeek)num1 || (double)get.dtd.d - num2 > 6.0)
                     {
                         _result.Add(ref day);
-                        day = new RecMktDay(dtd);
+                        day       = new RecMktDay(dtd);
                         day.dtd.v = 0.0f;
                         day.dtd.i = 0.0f;
                     }
@@ -193,12 +193,12 @@ namespace Nis.Utils
                         day.dtd.h = dtd.h;
                     if ((double)dtd.l < (double)day.dtd.l)
                         day.dtd.l = dtd.l;
-                    day.dtd.c = dtd.c;
-                    day.dtd.d = dtd.d;
+                    day.dtd.c =  dtd.c;
+                    day.dtd.d =  dtd.d;
                     day.dtd.v += dtd.v;
-                    day.dtd.i = dtd.i;
-                    num1 = (int)dateTime.DayOfWeek;
-                    num2 = (double)dtd.d;
+                    day.dtd.i =  dtd.i;
+                    num1      =  (int)dateTime.DayOfWeek;
+                    num2      =  (double)dtd.d;
                 } while (_dlyList.Next());
             }
 
@@ -209,28 +209,28 @@ namespace Nis.Utils
 
         private void ProcessTableMonthly()
         {
-            RecMktDay day = (RecMktDay)null;
-            int num1 = 0;
-            int num2 = 0;
-            DateTime minValue = DateTime.MinValue;
+            RecMktDay day      = (RecMktDay)null;
+            int       num1     = 0;
+            int       num2     = 0;
+            DateTime  minValue = DateTime.MinValue;
             _result = new MsMktList();
             if (!_dlyList.Reset())
                 return;
             do
             {
-                RecMktDay get = _dlyList.Get;
-                RecDay dtd = get.dtd;
-                DateTime dateTime = DateTime.FromOADate((double)get.dtd.d);
-                DateTime date1;
+                RecMktDay get      = _dlyList.Get;
+                RecDay    dtd      = get.dtd;
+                DateTime  dateTime = DateTime.FromOADate((double)get.dtd.d);
+                DateTime  date1;
                 if (day == null)
                 {
-                    day = new RecMktDay(dtd);
+                    day       = new RecMktDay(dtd);
                     day.dtd.v = 0.0f;
                     day.dtd.i = 0.0f;
-                    date1 = dateTime.Date;
-                    num1 = date1.Month;
-                    date1 = dateTime.Date;
-                    num2 = date1.Year;
+                    date1     = dateTime.Date;
+                    num1      = date1.Month;
+                    date1     = dateTime.Date;
+                    num2      = date1.Year;
                 }
 
                 date1 = dateTime.Date;
@@ -242,22 +242,22 @@ namespace Nis.Utils
                 }
 
                 date1 = dateTime.Date;
-                num1 = date1.Month;
+                num1  = date1.Month;
                 date1 = dateTime.Date;
-                num2 = date1.Year;
+                num2  = date1.Year;
                 _result.Add(ref day);
-                day = new RecMktDay(dtd);
+                day       = new RecMktDay(dtd);
                 day.dtd.v = 0.0f;
                 day.dtd.i = 0.0f;
-            label_6:
+                label_6:
                 if ((double)dtd.h > (double)day.dtd.h)
                     day.dtd.h = dtd.h;
                 if ((double)dtd.l < (double)day.dtd.l)
                     day.dtd.l = dtd.l;
-                day.dtd.c = dtd.c;
-                day.dtd.d = dtd.d;
+                day.dtd.c =  dtd.c;
+                day.dtd.d =  dtd.d;
                 day.dtd.v += dtd.v;
-                day.dtd.i = dtd.i;
+                day.dtd.i =  dtd.i;
                 DateTime date2 = dateTime.Date;
             } while (_dlyList.Next());
 
@@ -273,9 +273,9 @@ namespace Nis.Utils
             clearROAttribute(_datFilePath);
             _fs = new FileStream(_datFilePath, FileMode.Create, FileAccess.Write, FileShare.None);
             WriteToFileStream(_fs, new RecMsDayHeader()
-            {
-                Count = Convert.ToInt16(_dlyList.Count + 1)
-            });
+                                   {
+                                       Count = Convert.ToInt16(_dlyList.Count + 1)
+                                   });
             BinaryWriter binaryWriter = new BinaryWriter((Stream)_fs);
             binaryWriter.Seek(8, SeekOrigin.Begin);
             binaryWriter.Write(Count + 1);
@@ -337,7 +337,7 @@ namespace Nis.Utils
         public void BulkLoad(MsMktList list)
         {
             _dlyList = list;
-            _result = list;
+            _result  = list;
         }
 
         public void Add(RecMktDay dtdDay)
@@ -352,7 +352,7 @@ namespace Nis.Utils
                 offset += fs.Read(_msDayBuff, offset, _msDayBuff.Length - offset);
             GCHandle gcHandle = GCHandle.Alloc((object)_msDayBuff, GCHandleType.Pinned);
             rec = (RecMsDay)Marshal.PtrToStructure(gcHandle.AddrOfPinnedObject(),
-                typeof(RecMsDay));
+                                                   typeof(RecMsDay));
             gcHandle.Free();
         }
 

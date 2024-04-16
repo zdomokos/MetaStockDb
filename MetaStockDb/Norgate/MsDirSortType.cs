@@ -6,9 +6,9 @@
 
 namespace Nis.Utils
 {
-	public enum MsDirSortType
-	{
-		name,
-		symbol,
-	}
+    public enum MsDirSortType
+    {
+        name,
+        symbol,
+    }
 }

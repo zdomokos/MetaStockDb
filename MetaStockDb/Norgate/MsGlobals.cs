@@ -6,23 +6,23 @@
 
 namespace Nis.Utils
 {
-	public class MsGlobals
-	{
-		private string FolderPath;
-		public string Fs1Pth { get; }
-		public string Fs2Pth { get; }
-		public string Fs3Pth { get; }
-		public FileStream Fs1;
-		public FileStream Fs2;
-		public FileStream Fs3;
-		public FileStream FsMkt;
+    public class MsGlobals
+    {
+        private string     FolderPath;
+        public  string     Fs1Pth { get; }
+        public  string     Fs2Pth { get; }
+        public  string     Fs3Pth { get; }
+        public  FileStream Fs1;
+        public  FileStream Fs2;
+        public  FileStream Fs3;
+        public  FileStream FsMkt;
 
-		public MsGlobals(string folder)
-		{
-			FolderPath = folder;
-			Fs1Pth     = $"{folder}master";
-			Fs2Pth     = $"{folder}emaster";
-			Fs3Pth     = $"{folder}xmaster";
-		}
-	}
+        public MsGlobals(string folder)
+        {
+            FolderPath = folder;
+            Fs1Pth     = $"{folder}master";
+            Fs2Pth     = $"{folder}emaster";
+            Fs3Pth     = $"{folder}xmaster";
+        }
+    }
 }
