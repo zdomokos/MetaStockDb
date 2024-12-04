@@ -28,7 +28,7 @@
         <DefineConstants>TRACE;</DefineConstants>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="NUnit" Version="4.0.1"/>
+        <PackageReference Include="NUnit" Version="4.*"/>
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\MetaStockDb\MetaStockDb.csproj"/>
