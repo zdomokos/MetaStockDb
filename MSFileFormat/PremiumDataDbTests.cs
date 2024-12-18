@@ -4,7 +4,7 @@ using System;
 namespace MetaStockDb.Test
 {
     [TestFixture]
-    public class NorgateDbTests
+    public class PremiumDataDbTests
     {
         [Test]
         public void ReadData_using_PremiumData_revEngineered_code()
@@ -19,7 +19,7 @@ namespace MetaStockDb.Test
         [Test]
         public void ReadData()
         {
-            var db = new NorgateDb(@"c:\ZTG\DB\PremiumData");
+            var db = new PremiumDataDb(@"c:\ZTG\DB\PremiumData");
             db.LoadSymbolTable();
             Console.WriteLine(db.Count);
             //Assert.IsTrue(db.Count > 0);
